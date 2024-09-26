@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  title: 'Cat memes API'
+  version: 0.0.1
+paths:
+  /api/v1/image/random:
+    get:
+      operationId: 620701c2b117fbbad5396ff45b76bf7e
+      responses:
+        '200':
+          description: 'Gets a random image of random mood'
+  '/api/v1/image/{mood}/{name}':
+    get:
+      operationId: 6968ff59612f09d2ec2fce4975227c92
+      parameters:
+        -
+          name: mood
+          in: path
+          required: true
+        -
+          name: name
+          in: path
+          required: true
+      responses:
+        '200':
+          description: "Gets a specific image by it's mood and name"
+  '/api/v1/image/like/{imageId}':
+    post:
+      operationId: 6620f711325417f4d6c556ce8901133e
+      parameters:
+        -
+          name: imageId
+          in: path
+          required: true
+      responses:
+        '200':
+          description: "Likes an image, if the client's IP hasn't already liked the image"
+  /api/v1/moods:
+    get:
+      operationId: 7bc0e77882e7565f412855a1247c1716
+      responses:
+        '200':
+          description: 'Returns an array of available mood folders'
+  '/api/v1/image/{mood}/random':
+    get:
+      operationId: 1c5788b82671d4185b4e8fc94f74f274
+      parameters:
+        -
+          name: mood
+          in: path
+          required: true
+      responses:
+        '200':
+          description: 'Gets a random image of a specific mood'
